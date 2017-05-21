@@ -1,14 +1,20 @@
 package com.udacity.gradle.builditbigger;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.udacity.gradle.builditbigger.jokes.Jokes;
+import com.udacity.gradle.builditbigger.jokes.RandomUtils;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    @NonNull private final Jokes jokes = new Jokes(new RandomUtils());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, jokes.getJoke(), Toast.LENGTH_SHORT).show();
     }
 
 
