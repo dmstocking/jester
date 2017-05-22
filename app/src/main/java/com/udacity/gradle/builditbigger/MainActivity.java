@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.udacity.gradle.builditbigger.joker.JokeActivity;
 import com.udacity.gradle.builditbigger.jokes.Jokes;
 import com.udacity.gradle.builditbigger.jokes.RandomUtils;
 
@@ -46,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this, jokes.getJoke(), Toast.LENGTH_SHORT).show();
+        startActivity(JokeActivity.getIntent(this, jokes.getJoke()));
     }
-
-
 }
