@@ -28,7 +28,7 @@ public class GetJokeTask extends AsyncTask<Void, Void, String> {
         try {
             return myApiService.getJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            return "FAILURE";
         }
     }
 

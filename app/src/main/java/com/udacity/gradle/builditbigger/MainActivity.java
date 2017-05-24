@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String joke) {
                 super.onPostExecute(joke);
-                startActivity(JokeActivity.getIntent(MainActivity.this, joke));
+                if (!"FAILURE".equals(joke)) {
+                    startActivity(JokeActivity.getIntent(MainActivity.this, joke));
+                }
             }
         }.execute();
     }
