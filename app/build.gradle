@@ -29,9 +29,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile project(':jokes')
     compile project(':joker')
     compile project(':backend')
@@ -41,4 +38,20 @@ dependencies {
     compile 'com.google.api-client:google-api-client-android:1.22.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':backend', configuration: 'android-endpoints')
+
+
+    androidTestCompile 'com.android.support:support-annotations:25.3.1'
+    // Android JUnit Runner
+    androidTestCompile 'com.android.support.test:runner:0.5'
+
+    // JUnit4 Rules
+    androidTestCompile 'com.android.support.test:rules:0.5'
+
+    // Espresso core
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Espresso-intents for validation and stubbing of Intents
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+
 }
