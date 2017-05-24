@@ -18,6 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'com/google/appengine/repackaged/org/apache/commons/codec/language/bm/*'
+        exclude 'com/google/appengine/repackaged/org/codehaus/jackson/impl/VERSION.txt'
+        exclude 'com/google/appengine/repackaged/org/apache/commons/codec/language/*'
+    }
 }
 
 dependencies {
@@ -27,8 +33,11 @@ dependencies {
     })
     compile project(':jokes')
     compile project(':joker')
+    compile project(':backend')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.android.gms:play-services-ads:10.2.6'
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.api-client:google-api-client-android:1.22.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':backend', configuration: 'android-endpoints')
 }

@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        startActivity(JokeActivity.getIntent(this, jokes.getJoke()));
+        new GetJokeTask() {
+            @Override
+            protected void onPostExecute(String joke) {
+                super.onPostExecute(joke);
+                startActivity(JokeActivity.getIntent(MainActivity.this, joke));
+            }
+        }.execute();
     }
 }
