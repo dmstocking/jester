@@ -20,6 +20,17 @@ android {
         }
     }
 
+    productFlavors {
+        pro {
+            applicationIdSuffix ".paid"
+            versionNameSuffix "-paid"
+        }
+        free {
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
+        }
+    }
+
     packagingOptions {
         exclude 'com/google/appengine/repackaged/org/apache/commons/codec/language/bm/*'
         exclude 'com/google/appengine/repackaged/org/codehaus/jackson/impl/VERSION.txt'
